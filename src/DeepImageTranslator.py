@@ -10,13 +10,11 @@ import tensorflow as tf
 from tensorflow import keras
 import os
 
-
 ctypes.windll.shcore.SetProcessDpiAwareness(1)
 
-
-
 ############
 ############
+
 # Command: Load input images
 def Load_train_input():
     global Train_input_dir_list, Train_index_list, Img1, cumulative_train_index, image_set, o_h, o_w, o_c
@@ -47,6 +45,7 @@ def Load_train_target():
     Image_panel.add(Image2)
     image_set = 1
 
+# Command: Load input images for validation
 def Load_val_input():
     global Val_input_dir_list, Val_index_list, Img1, cumulative_val_index, image_set
     # Create list of input images
@@ -57,7 +56,7 @@ def Load_val_input():
     Image_panel.add(Image1)
     image_set = 2
 
-# Command: Load target images
+# Command: Load target images for validation
 def Load_val_target():
     global Val_target_dir_list, Val_index_list, Img2, cumulative_val_index, image_set
     # Create list of input images
@@ -68,6 +67,7 @@ def Load_val_target():
     Image_panel.add(Image2)
     image_set = 2
 
+# Command: Load images for translation
 def Load_trans_input():
     global Trans_input_dir_list, Trans_index_list, Img1, cumulative_Trans_index, image_set
     # Create list of input images
@@ -77,9 +77,6 @@ def Load_trans_input():
     Img1 = Image.open(Trans_input_dir_list[0])
     Image_panel.add(Image1)
     image_set = 3
-
-
-
 
 # Command: Define new model window
 def Open_new_model_window():
@@ -126,7 +123,6 @@ def Open_new_model_window():
     O_C.insert(0, o_c)
     O_C.pack(side=LEFT, expand=0, fill=X)
 
-
     New_model_inputs_filler5 = Frame(New_model_inputs, height=30, bg='#4f4f4f')
     New_model_inputs_filler5.pack(side=TOP, fill=BOTH, expand=0)
 
@@ -147,7 +143,6 @@ def Open_new_model_window():
     T_C.insert(0, t_c)
     T_C.pack(side=LEFT, expand=0, fill=X)
 
-
     New_model_inputs_filler4 = Frame(New_model_inputs, height=30, bg='#4f4f4f')
     New_model_inputs_filler4.pack(side=TOP, fill=BOTH, expand=0)
 
@@ -163,7 +158,6 @@ def Open_new_model_window():
     Model_Type.config(bg="#1f1f1f", fg="#ffffff", bd=0, relief=FLAT, activeforeground='#ffffff', activebackground='#1f1f1f', width=12, highlightthickness=0)
     Model_Type["menu"].config(bg="#1f1f1f", fg="#ffffff", bd=0, activeforeground='#ffffff', activebackground='#4f4f4f')
     Model_Type.pack(side=LEFT, expand=0, fill=X)
-
 
     New_model_inputs_filler34 = Frame(New_model_inputs, height=50, bg='#4f4f4f')
     New_model_inputs_filler34.pack(side=TOP, fill=BOTH, expand=0)
@@ -188,10 +182,8 @@ def Open_new_model_window():
     Num_of_channels_entry.insert(0, "16")
     Num_of_channels_entry.pack(side=LEFT, expand=0, fill=X)
 
-
     New_model_inputs_filler3 = Frame(New_model_inputs, height=20, bg='#4f4f4f')
     New_model_inputs_filler3.pack(side=TOP, fill=BOTH, expand=0)
-
 
     New_model_inputs_R6 = Frame(New_model_inputs, height=50, bg='#4f4f4f')
     New_model_inputs_R6.pack(side=TOP, fill=BOTH, expand=0)
@@ -206,6 +198,7 @@ def Open_new_model_window():
     New_model_inputs_R7 = Frame(New_model_inputs, height=50, bg='#4f4f4f')
     New_model_inputs_R7.pack(side=TOP, fill=BOTH, expand=0)
 
+    # Generate model from model creator
     def get_var_gen_model():
         global o_w, o_h, o_c, t_w, t_h, t_c, model_type, num_layers, initial_ch, gan_onoff, deep_sup, current_model
         o_w = int(O_W.get())
@@ -243,6 +236,9 @@ def Open_new_model_window():
     New_model_inputs_filler1 = Frame(New_model_inputs, height=50, bg='#4f4f4f')
     New_model_inputs_filler1.pack(side=TOP, fill=BOTH, expand=0)
 
+
+    
+#Data augmentation
 
 def Apply_augmentation():
     global rp_prob, in_rp, tar_rp,  s_p, in_s, tar_s, r_d, in_r, tar_r, t_p, in_t, tar_t, in_f, tar_f, d_n, d_s, in_d, tar_d, e_p, in_e, tar_e, \
@@ -295,8 +291,6 @@ def Apply_augmentation():
     tar_c = int(Tar_C.get())
 
     switch_to_train()
-
-
 
 def Open_data_aug_window():
     global Rp_Prob, In_Rp, Tar_Rp,  S_P, In_S, Tar_S,  R_D, In_R, Tar_R,  T_P, In_T, Tar_T,  D_N, D_S, In_F, Tar_F,  In_D, Tar_D,  E_P, In_E, Tar_E, \
@@ -512,8 +506,6 @@ def Open_data_aug_window():
     data_aug_c2_r13.pack(side=TOP, expand=1)
 
 
-
-
     data_aug_Col3 = Frame(data_aug_window_panel, width=100, bg='#4f4f4f')
     data_aug_Col3.pack(side=LEFT, expand=1, fill=Y)
     data_aug_Col3.pack_propagate(0)
@@ -593,9 +585,6 @@ def Open_data_aug_window():
                                   activebackground='#4f4f4f', height=1)
     data_aug_c2_r13.pack(side=TOP, expand=1)
 
-
-
-
     data_aug_window_bottom = Frame(data_aug_window_bg, bg='#4f4f4f', width=500, height=30)
     data_aug_window_bottom.pack(side=TOP, expand=0, anchor=NW)
     data_aug_window_bottom.pack_propagate(0)
@@ -605,6 +594,10 @@ def Open_data_aug_window():
 
     data_aug_window_filler = Frame(data_aug_window_bg, bg='#4f4f4f', width=500, height=30)
     data_aug_window_filler.pack(side=TOP, expand=0, anchor=NW)
+
+    
+    
+# Training parameter window
 
 def Apply_train_par():
     global opt_type, _loss, _metric, epoch_num, b_sz
@@ -716,14 +709,13 @@ def Open_train_par_window():
     train_par_window_filler.pack(side=TOP, expand=0, anchor=NW)
 
 
+    
+# Model training
+
 def Load_model_weights():
-    # Create list of input images
     Train_input_dir_list = filedialog.askopenfilenames(parent=root, title='Load pre-trained weights')
     current_model.load_weights(Train_input_dir_list[0])
 
-
-
-## Training
 def ssim(y_true, y_pred):
     return tf.reduce_mean(tf.image.ssim(y_true, y_pred, 1))
 
@@ -739,32 +731,9 @@ def dice_coef(y_true, y_pred):
     intersection = tf.reduce_sum(y_true_f * y_pred_f)
     return (2. * intersection + smooth) / (tf.reduce_sum(y_true_f) + tf.reduce_sum(y_pred_f) + smooth)
 
-
-def dice_ch1(y_true, y_pred):
-    y_true_f = tf.keras.layers.Flatten()(y_true[:,:,:,:1])
-    y_pred_f = tf.keras.layers.Flatten()(y_pred[:,:,:,:1])
-    intersection = tf.reduce_sum(y_true_f * y_pred_f)
-    return (2. * intersection + smooth) / (tf.reduce_sum(y_true_f) + tf.reduce_sum(y_pred_f) + smooth)
-
-def dice_ch2(y_true, y_pred):
-    y_true_f = tf.keras.layers.Flatten()(y_true[:,:,:,1:2])
-    y_pred_f = tf.keras.layers.Flatten()(y_pred[:,:,:,1:2])
-    intersection = tf.reduce_sum(y_true_f * y_pred_f)
-    return (2. * intersection + smooth) / (tf.reduce_sum(y_true_f) + tf.reduce_sum(y_pred_f) + smooth)
-
-def dice_ch3(y_true, y_pred):
-    y_true_f = tf.keras.layers.Flatten()(y_true[:,:,:,2:])
-    y_pred_f = tf.keras.layers.Flatten()(y_pred[:,:,:,2:])
-    intersection = tf.reduce_sum(y_true_f * y_pred_f)
-    return (2. * intersection + smooth) / (tf.reduce_sum(y_true_f) + tf.reduce_sum(y_pred_f) + smooth)
-
-
 def dice_loss(y_true, y_pred):
     dice_loss = 1 - dice_coef(y_true, y_pred)
     return dice_loss
-
-
-
 
 def IoU(targets, inputs):
     # flatten label and prediction tensors
@@ -825,6 +794,9 @@ def Save_model_weights():
     User_model_weight_file = filedialog.asksaveasfile(mode='w', defaultextension=".hdf5")
     current_model.save_weights(User_model_weight_file.name)
 
+    
+# Save translated images to files
+
 def Imagesave():
     Save_Folder_Name = filedialog.askdirectory(parent=root, title='Save predicted images under this folder')
     gen = ImageGEN.DataGen(Trans_index_list, Trans_input_dir_list, Trans_input_dir_list, o_w, o_h, t_w, t_h,
@@ -844,13 +816,13 @@ def Imagesave():
 
 ############
 ############
+# Main window
 
 root = Tk()
 root.title('FreeAI DeepImageTranslator version 1.0 Copyright (C) 2021 by Run Zhou Ye and En Zhou Ye. All rights reserved.')
 photo = PhotoImage(file = "icon.gif")
 root.iconphoto(False, photo)
 root.geometry("1500x500")
-
 
 # Create menu
 Root_Menu =  Menu(root)
@@ -912,6 +884,7 @@ current_val_index = 0
 current_Trans_index = 0
 
 
+# Next image button
 def forward(event=None):
     global cumulative_train_index, current_train_index, cumulative_val_index, current_val_index, cumulative_Trans_index, current_Trans_index, Img1, Img2, Img3
     if image_set == 1: # Training set selected
@@ -1007,7 +980,7 @@ def forward(event=None):
         Image_panel.add(Image2, stretch="always")
         Image_panel.add(Image3, stretch="always")
 
-
+# Previous image button
 def backward(event=None):
     global cumulative_train_index, current_train_index, cumulative_val_index, current_val_index, cumulative_Trans_index, current_Trans_index, Img1, Img2, Img3
     if image_set == 1: # Training set selected
@@ -1103,7 +1076,7 @@ def backward(event=None):
         Image_panel.add(Image2, stretch="always")
         Image_panel.add(Image3, stretch="always")
 
-
+# Show training images
 def switch_to_train():
     global image_set, Img1, Img2, Img3
     image_set = 1
@@ -1133,7 +1106,7 @@ def switch_to_train():
     Image_panel.add(Image2, stretch="always")
     Image_panel.add(Image3, stretch="always")
 
-
+# Show validation images
 def switch_to_val():
     global image_set, Img1, Img2, Img3
     image_set = 2
@@ -1163,7 +1136,7 @@ def switch_to_val():
     Image_panel.add(Image2, stretch="always")
     Image_panel.add(Image3, stretch="always")
 
-
+# Show translation images
 def switch_to_trans():
     global image_set, Img1, Img2, Img3
     image_set = 3
