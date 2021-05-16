@@ -5,8 +5,11 @@ DeepImageTranslator is designed to be a user-friendly graphical interface tool t
 
 Installation and use :
 1-	Download the software package at : https://sourceforge.net/projects/deepimagetranslator/
+
 2-	Unzip the package
+
 3-	Run DeepImageTranslator.exe
+
 
 ![image](https://user-images.githubusercontent.com/84249081/118382658-8f29d400-b5c5-11eb-8f0b-1150b30e91a7.png)
 
