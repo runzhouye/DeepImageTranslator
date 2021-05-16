@@ -4,6 +4,7 @@ DeepImageTranslator: a free, user-friendly graphical interface for image transla
 DeepImageTranslator is designed to be a user-friendly graphical interface tool that allows researchers with no programming experience to easily build, train, and evaluate CNNs for image translation. Compared to existing software programs, our tool also allows users to customize their CNN (e.g. number of layers/channels, use of deep-supervision, and input layer resolution), the type of model optimizer algorithm, the loss function, and the data augmentation schemes. We showed that using only a standard personal computer, it is possible to train neural networks for accurate semantic segmentation of CT images. 
 
 Installation and use :
+
 1-	Download the software package at : https://sourceforge.net/projects/deepimagetranslator/
 
 2-	Unzip the package
