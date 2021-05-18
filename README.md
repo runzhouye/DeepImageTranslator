@@ -12,6 +12,7 @@ Installation and use :
 3-	Run DeepImageTranslator.exe
 
 Citation: 
+
 Run Zhou Ye, Christophe Noll, Gabriel Richard, Martin Lepage, Eric E. Turcotte, Andre C Carpentier. DeepImageTranslator: a free, user-friendly graphical interface for image translation using deep-learning and its applications in 3D CT image analysis. biorxiv. 2021 May 18. doi: https://doi.org/10.1101/2021.05.15.444315 
 
 
