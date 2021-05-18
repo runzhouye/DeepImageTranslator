@@ -13,7 +13,7 @@ Installation and use :
 
 Citation: 
 
-Run Zhou Ye, Christophe Noll, Gabriel Richard, Martin Lepage, Eric E. Turcotte, Andre C Carpentier. DeepImageTranslator: a free, user-friendly graphical interface for image translation using deep-learning and its applications in 3D CT image analysis. biorxiv. 2021 May 18. doi: https://doi.org/10.1101/2021.05.15.444315 
+Ye RZ et al. DeepImageTranslator: a free, user-friendly graphical interface for image translation using deep-learning and its applications in 3D CT image analysis. biorxiv. 2021 May 18. doi: https://doi.org/10.1101/2021.05.15.444315 
 
 
 ![image](https://user-images.githubusercontent.com/84249081/118382658-8f29d400-b5c5-11eb-8f0b-1150b30e91a7.png)
