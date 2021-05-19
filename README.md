@@ -28,7 +28,8 @@ Different features of DeepImageTranslator. a, The main window for image viewing.
 The pipeline for using the DeepImageTranslator. a, The construction of a custom U-net-like convolutional neural network and model training. b, The use of the trained neural network to make predictions based on new input data. ch: number of convolution maps (channels) after the first 3x3 convolution; Conv.: convolution; hin: input image height; ht: target image height; ReLU: rectified linear activation function; win: input image width; wt: target image width.
 
 
-![Fig  5](https://user-images.githubusercontent.com/84249081/118856141-a0643080-b8a4-11eb-9d10-5cf89e124962.PNG)
+![Fig6](https://user-images.githubusercontent.com/84249081/118856307-cdb0de80-b8a4-11eb-9a31-fc33acd67f77.png)
+
 
 
 Assessment of out-of-sample model generalizability based on scans from a severely obese male subject and a very lean female subject. a, Model generalizability in the obese male subject. left panel: input images randomly selected for inclusion in the figure; middle panel: ground truth segmentation maps; right panel: model predictions based on images in the left panel. b, Model generalizability in the obese male subject.  c, Model generalizability in the lean female subject. 
