@@ -22,7 +22,8 @@ Ye RZ et al. DeepImageTranslator: a free, user-friendly graphical interface for 
 Different features of DeepImageTranslator. a, The main window for image viewing. b, Training hyperparameter selection window. c, Neural network model builder. d, Command prompt window for training monitoring. e, Image augmentation toolbox.
 
 
-![Fig  2](https://user-images.githubusercontent.com/84249081/118856107-96dac880-b8a4-11eb-9362-9fc283f4b420.PNG)
+![Fig2](https://user-images.githubusercontent.com/84249081/118856579-19638800-b8a5-11eb-95e5-717118bddfbf.png)
+
 
 
 The pipeline for using the DeepImageTranslator. a, The construction of a custom U-net-like convolutional neural network and model training. b, The use of the trained neural network to make predictions based on new input data. ch: number of convolution maps (channels) after the first 3x3 convolution; Conv.: convolution; hin: input image height; ht: target image height; ReLU: rectified linear activation function; win: input image width; wt: target image width.
