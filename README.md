@@ -13,7 +13,7 @@ Installation and use :
 
 Citation: 
 
-Ye RZ et al. DeepImageTranslator: a free, user-friendly graphical interface for image translation using deep-learning and its applications in 3D CT image analysis. biorxiv. 2021 May 18. doi: https://doi.org/10.1101/2021.05.15.444315 
+Please cite this article as: R.Z. Ye, C. Noll, G. Richard et al., DeepImageTranslator: A free, user-friendly graphical interface for image translation using deep-learning and its applications in 3D CT image analysis, SLAS Technology, https://doi.org/10.1016/j.slast.2021.10.014
 
 
 ![Fig  1](https://user-images.githubusercontent.com/84249081/118856072-87f41600-b8a4-11eb-874a-8c6bf05c1612.PNG)
